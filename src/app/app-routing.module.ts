@@ -17,6 +17,8 @@ const routes: Routes = [
   //       (md) => md.DoctorModuleModule
   //     ),
   // },
+
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'doctors',
     component: DoctorComponent,

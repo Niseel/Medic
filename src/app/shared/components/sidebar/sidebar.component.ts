@@ -11,7 +11,7 @@ export class SidebarComponent implements OnInit {
   constructor(private router: Router) {}
 
   public subModules: any[] = [
-    { title: 'dashboard', svg: 'dashboard', sizeIcon: 'lg', isActive: false },
+    { title: 'dashboard', svg: 'dashboard', sizeIcon: 'lg', isActive: true },
     {
       title: 'appointment',
       svg: 'appointment',
