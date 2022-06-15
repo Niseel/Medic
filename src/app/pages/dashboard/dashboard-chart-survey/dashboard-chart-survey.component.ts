@@ -14,7 +14,7 @@ Chart.register(...registerables);
 export class DashboardChartSurveyComponent implements OnInit, AfterViewInit {
   private chartInstance?: Chart;
 
-  public chartTitle = '';
+  public chartTitle = 'Cố tình sửa cho có conflict nè';
 
   constructor() {}
 
