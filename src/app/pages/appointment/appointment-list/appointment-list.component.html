@@ -1,0 +1,64 @@
+<div class="fa-list-patients">
+  <p-table [value]="listItems" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr class="fa-head-table">
+        <th>Patient</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Gender</th>
+        <th>Phone Number</th>
+        <th>Action</th>
+        <th>Apponintment</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-listItem>
+      <tr class="fa-body-table">
+        <td>
+          <div class="fa-list-patients__items">
+            <div class="fa-list-patients__avatar">
+              <img
+                srcset="../../../../assets/images/user01.png 2x"
+                alt="user image"
+              />
+            </div>
+            <p>{{ listItem?.patient }}</p>
+          </div>
+        </td>
+        <td>
+          <div class="fa-list-patients__items">
+            <p class="test">
+              {{ listItem?.date }}
+            </p>
+          </div>
+        </td>
+        <td>{{ listItem?.time }}</td>
+        <td>{{ listItem?.gender }}</td>
+        <td>{{ listItem?.phoneNumber }}</td>
+        <td>
+          <div class="fa-list-patients__icons-container">
+            <div class="fa-list-patients__action-icon">
+              <svg-icon key="edit" size="lg"></svg-icon>
+            </div>
+            <div class="fa-list-patients__action-icon">
+              <svg-icon key="user" size="lg"></svg-icon>
+            </div>
+            <div class="fa-list-patients__action-icon">
+              <svg-icon key="trashbin" size="lg"></svg-icon>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            *ngIf="listItem?.active; else cancel"
+            class="fa-list-patients__appointment"
+          >
+            Start Appointment
+          </div>
+          <ng-template #cancel>
+            <div class="fa-list-patients__canceled">Canceled</div>
+          </ng-template>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

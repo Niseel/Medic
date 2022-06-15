@@ -1,0 +1,88 @@
+@import "../../app";
+
+.dashboard {
+  padding: 30px;
+  &-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__widget {
+    // background-color: $background-light;
+    // width: 264px;
+    // // height: 118px;
+    // border-radius: 10px;
+    // padding: 24px 22px;
+    // margin-right: 16px;
+    // margin-bottom: 30px;
+  }
+  &__widget-item {
+    background-color: $background-light;
+    width: 264px;
+    // height: 118px;
+    border-radius: 10px;
+    padding: 24px 22px;
+    // margin-right: 16px;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__widget-item--icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    color: $text-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.first-color {
+      background-color: $secondary-color-lighter;
+    }
+    &.second-color {
+      background-color: $primary-color;
+    }
+    &.third-color {
+      background-color: $third-color;
+    }
+    &.fourth-color {
+      background-color: $fourth-color;
+    }
+  }
+  &__widget-item--infor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    flex-grow: 1;
+  }
+  &__widget-item--infor-amount {
+    color: $text-dark;
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
+  &__widget-item--infor-label {
+    font-size: 0.9rem;
+    color: $text-gray;
+  }
+}
+
+.dashboard {
+  &__chart {
+    margin-bottom: 30px;
+  }
+  &__chart-row {
+  }
+  &__chart-line {
+    background: $background-light;
+    height: 450px;
+    margin-right: 30px;
+    border-radius: 14px;
+  }
+  &__chart-bar {
+    height: 450px;
+
+    background: $background-light;
+    border-radius: 14px;
+  }
+}

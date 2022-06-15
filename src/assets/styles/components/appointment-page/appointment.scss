@@ -1,0 +1,135 @@
+@import "../../app";
+
+.appointment {
+  margin: auto 30px auto 38px;
+  &__header {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__header-title span {
+    color: $text-dark;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  &__list {
+    margin-top: 18px;
+  }
+}
+
+:host ::ng-deep {
+  .appointment__feature {
+    display: flex;
+    justify-content: flex-end;
+    &--dropdown {
+      height: 45px;
+      min-width: 150px;
+      margin-right: 10px;
+    }
+  }
+}
+
+p {
+  margin-bottom: 0;
+}
+.fa-list-patients {
+  margin-top: 30px;
+  padding: 30px;
+  background-color: $background-light;
+  border-radius: 14px;
+  &__avatar {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: $background-user;
+    border-radius: 7px;
+    margin-right: 12px;
+  }
+  &__icons-container {
+    display: flex;
+  }
+  &__action-icon {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 9px;
+    border: 1px solid $background-gray;
+    margin-right: 10px;
+  }
+  &__appointment {
+    padding: 10px 5px;
+    color: $text-success;
+    background-color: $text-success-lighter;
+    border-radius: 6px;
+  }
+  &__canceled {
+    padding: 10px 5px;
+    color: $text-danger;
+    background-color: $text-danger-lighter;
+    border-radius: 6px;
+    text-align: center;
+  }
+  &__items {
+    display: flex;
+    align-items: center;
+  }
+
+  td {
+    font-size: 0.9rem;
+  }
+  th {
+    text-align: left;
+    vertical-align: middle;
+
+    font-style: normal;
+    line-height: 16px;
+    font-weight: 500;
+    font-size: 13px;
+    font-size: 1rem;
+    color: $text-gray;
+  }
+  th:nth-child(6),
+  th:last-child {
+    text-align: center;
+  }
+  td:last-child {
+    .fa-list-patients__appointment {
+      text-align: center;
+    }
+  }
+  .fa-head-table {
+    th {
+      border: none;
+      &:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+
+      &:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+    }
+  }
+  .fa-body-table {
+    td {
+      &:first-child {
+        padding-left: 10px;
+      }
+      &:nth-child(6) {
+        .fa-list-patients__icons-container {
+          justify-content: center;
+        }
+      }
+    }
+  }
+  td {
+    background-color: $background-light;
+    border: none;
+  }
+  th {
+    background-color: $background-gray;
+  }
+}

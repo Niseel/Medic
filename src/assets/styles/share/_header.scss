@@ -1,0 +1,84 @@
+@import "../app";
+
+.header {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__search {
+    margin-left: 60px;
+    cursor: pointer;
+  }
+  &__search-icon {
+    position: absolute;
+    padding: 10px 10px 5px 0px;
+    color: $text-gray;
+    min-width: 20px;
+    text-align: center;
+    padding-left: 21px;
+    font-size: 1.1rem;
+  }
+  &__search-input {
+    font-size: 0.9rem;
+
+    width: 100%;
+    padding: 10px;
+    padding-left: 50px;
+    outline: none;
+    border: 1px solid $border-gray-dark;
+    border-radius: 7px;
+  }
+  &__infor {
+    display: flex;
+    align-items: center;
+
+    margin-right: 40px;
+    cursor: pointer;
+  }
+  &__infor-notifications {
+    background-color: $background-gray;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 14px;
+  }
+  &__infor-notifications-group {
+    position: relative;
+  }
+  &__infor-notifications-icon {
+    margin: 0 auto;
+    color: $primary-color;
+  }
+  &__infor-notifications-chip {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    height: 0.3rem;
+    width: 0.3rem;
+    border-radius: 100%;
+    border: 1px solid $text-white;
+    background-color: $fourth-color;
+  }
+  &__infor-user {
+    display: flex;
+    align-items: center;
+  }
+  &__infor-user-image {
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    margin-right: 10px;
+  }
+  &__infor-user-name {
+    font-size: 1rem;
+    margin-right: 14px;
+  }
+  &__infor-user-name-icon {
+    color: $text-grayer;
+  }
+}

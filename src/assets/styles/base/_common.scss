@@ -1,0 +1,64 @@
+.fa__feature {
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+  height: fit-content;
+
+  height: 44px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  &-btn {
+    padding: 15px 15px 15px 7px;
+    span {
+      padding-left: 2px;
+    }
+  }
+  &.primary {
+    background-color: $primary-color;
+    color: $text-white;
+  }
+  &.secondary {
+    background-color: $background-gray;
+    border: 1px solid $border-gray;
+    color: $text-dark;
+  }
+  &:hover {
+    opacity: $opacity80;
+  }
+}
+
+::ng-deep {
+  .fa__button {
+    &--primary {
+      .p-button {
+        background-color: $primary-color;
+        border: 1px solid $primary-color-lighter;
+        &:hover {
+          background-color: $primary-color-darker;
+          border: 1px solid $primary-color;
+        }
+      }
+    }
+    &--primary--outlet {
+      .p-button {
+        color: $primary-color;
+        background-color: $text-white;
+        border: 1px solid $primary-color;
+        &:hover {
+          color: $primary-color;
+          background-color: $primary-color-lighter;
+        }
+      }
+    }
+  }
+}
+
+// <div class="fa__feature [primary - secondary]">
+//   <div class="fa__feature-btn">
+//     <i class="fas fa-plus"></i>
+//     <span>Register Patients</span>
+//   </div>
+// </div>

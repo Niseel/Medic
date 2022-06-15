@@ -1,0 +1,56 @@
+<section class="sidebar">
+  <div class="sidebar__logo">
+    <img
+      class="logo__img"
+      srcset="../../../../assets/images/logo.png 2x"
+      alt="Logo Medix."
+    />
+    <h1 class="logo__name">Medix<span class="logo__dot">.</span></h1>
+  </div>
+  <div class="sidebar__menu">
+    <!-- {{ subModules }} -->
+    <div
+      class="sidebar__menu-item"
+      *ngFor="let subModule of subModules; let i = index"
+      (click)="onTab(subModule.title); activateClass(subModule)"
+      [ngClass]="{ active: subModule.isActive }"
+    >
+      <svg-icon [key]="subModule.svg" [size]="subModule.iconSize"></svg-icon>
+      <span>{{ subModule.title }}</span>
+    </div>
+  </div>
+
+  <div class="sidebar__feature-btn">
+    <div class="fa__feature secondary">
+      <div class="fa__feature-btn">
+        <!-- <i class="fas fa-plus"></i> -->
+        <svg-icon key="plus" size="lg"></svg-icon>
+        <span>Register Patients</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar__image">
+    <img
+      srcset="../../../../assets/images/image-setting.png 2x"
+      alt="Setting Image"
+    />
+  </div>
+  <div class="sidebar__menu">
+    <div class="sidebar__menu-item">
+      <!-- <i class="fas fa-cog"></i> -->
+      <svg-icon key="setting" size="lg"></svg-icon>
+      <span>Settings</span>
+    </div>
+  </div>
+</section>
+
+<!-- old icon -->
+<!-- <i class="fas fa-th-large"></i> -->
+<!-- <i class="fas fa-calendar-check"></i> -->
+<!-- <i class="fas fa-user-md"></i> -->
+<!-- <i class="fas fa-building"></i>-->
+<!-- <i class="fas fa-user-injured"></i> -->
+<!-- <i class="far fa-comment-alt"></i>  -->
+<!-- <i class="fas fa-phone-square"></i>  -->
+<!-- <i class="fas fa-plus"></i> -->

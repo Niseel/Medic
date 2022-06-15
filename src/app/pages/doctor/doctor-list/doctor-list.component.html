@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-3" *ngFor="let doctor of items">
+    <div class="doctor__item">
+      <div class="doctor__item-info">
+        <div class="position-relative">
+          <img
+            class="doctor__item-info-img"
+            [srcset]="doctor.avatar"
+            alt="Image of Doctor"
+          />
+          <div class="doctor__item-info-status" [ngClass]="doctor.status"></div>
+        </div>
+        <h3 class="doctor__item-info-name">
+          Dr.{{ doctor.firstName }} {{ doctor.lastName }}
+        </h3>
+        <span class="doctor__item-info-possion">{{ doctor.position }}</span>
+        <span class="doctor__item-info-derpartment">{{
+          doctor.derpartment
+        }}</span>
+        <span class="doctor__item-info-phone">Phone: {{ doctor.phone }}</span>
+        <span class="doctor__item-info-mail">Email: {{ doctor.mail }}</span>
+      </div>
+      <div class="doctor__item-dot-icon" [attr.data-id]="doctor._id">
+        <i class="fas fa-ellipsis-h"></i>
+        <div class="feature-list" [attr.data-id]="doctor._id">
+          <ul>
+            <li>Detail</li>
+            <li>Edit</li>
+            <li>Remove</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

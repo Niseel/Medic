@@ -1,0 +1,42 @@
+<section class="header">
+  <div class="header__search">
+    <!-- <i class="fas fa-search header__search-icon"></i> -->
+    <div class="header__search-icon">
+      <svg-icon key="search" size="md"></svg-icon>
+    </div>
+    <input
+      class="header__search-input"
+      type="text"
+      placeholder="Search her..."
+    />
+  </div>
+  <div class="header__infor">
+    <div class="header__infor-notifications">
+      <div class="header__infor-notifications-group">
+        <!-- <i class="fas fa-bell header__infor-notifications-icon"></i> -->
+        <div class="header__infor-notifications-icon">
+          <svg-icon key="bell" size="lg"></svg-icon>
+        </div>
+        <div class="header__infor-notifications-chip"></div>
+      </div>
+    </div>
+    <div class="header__infor-user">
+      <img
+        class="header__infor-user-image"
+        srcset="../../../../assets/images/current-user.png 2x"
+        alt="Image of current user"
+      />
+      <span class="header__infor-user-name">Deko</span>
+      <!-- <i class="fas fa-chevron-down header__infor-user-name-icon"></i> -->
+      <div class="header__infor-user-name-icon">
+        <!-- <svg-icon key="downArrow" size="md"></svg-icon> -->
+        <p-dropdown
+          [options]="userOption"
+          optionLabel="name"
+          optionValue="code"
+          styleClass="header__infor-feature--dropdown"
+        ></p-dropdown>
+      </div>
+    </div>
+  </div>
+</section>

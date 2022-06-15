@@ -1,0 +1,10 @@
+@import "../../app";
+@import "./doctor.scss";
+
+.p-inputgroup {
+  min-height: 40px;
+  padding-right: 16px;
+  .p-inputtext {
+    padding-left: 10px;
+  }
+}

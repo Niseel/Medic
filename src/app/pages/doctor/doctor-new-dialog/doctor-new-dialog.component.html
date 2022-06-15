@@ -1,0 +1,167 @@
+<p-dialog
+  header="Add a new Doctor"
+  [(visible)]="display"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [maximizable]="true"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="onClose()"
+>
+  <div *ngIf="!!formDoctorGroup" [formGroup]="formDoctorGroup">
+    <div class="container">
+      <div class="row">
+        <h5>Your name</h5>
+        <div class="col-6 md:col-6 mb-3">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input
+              type="text"
+              pInputText
+              placeholder="First name"
+              [formControlName]="fieldNameKeys.firstName"
+            />
+          </div>
+          <div *ngIf="isInvalidControl(fieldNameKeys.firstName)">
+            <ng-container
+              *ngFor="let msg of getErrorByField(fieldNameKeys.firstName)"
+            >
+              {{ msg }}
+              <br />
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="col-6 md:col-6">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input
+              type="text"
+              pInputText
+              placeholder="Last name"
+              [formControlName]="fieldNameKeys.lastName"
+            />
+          </div>
+          <div *ngIf="isInvalidControl(fieldNameKeys.lastName)">
+            <ng-container
+              *ngFor="let msg of getErrorByField(fieldNameKeys.lastName)"
+            >
+              {{ msg }}
+              <br />
+            </ng-container>
+          </div>
+        </div>
+
+        <h5>Your avatar</h5>
+        <div class="col-12 mb-3">
+          <!-- <p-fileUpload
+            name="myfile[]"
+            url="./upload.php"
+            [multiple]="multiple"
+            accept="image/*"
+            [maxFileSize]="1000000"
+          >
+          </p-fileUpload> -->
+          <!-- <p-fileUpload
+            name="docs[]"
+            [multiple]="true"
+            accept="image/*"
+            [maxFileSize]="2000000"
+            [showUploadButton]="true"
+          >
+          </p-fileUpload> -->
+        </div>
+
+        <h5>Your status</h5>
+        <div class="col-12 mb-3">
+          <p-selectButton
+            [options]="statusOptions"
+            optionLabel="label"
+            optionValue="value"
+            [formControlName]="fieldNameKeys.status"
+          ></p-selectButton>
+        </div>
+
+        <h5>Your Department</h5>
+        <div class="col-12 mb-3">
+          <p-dropdown
+            [options]="derpartments"
+            optionLabel="name"
+            optionValue="code"
+            [formControlName]="fieldNameKeys.derpartment"
+          ></p-dropdown>
+        </div>
+
+        <h5>Your Position</h5>
+        <div class="col-12 mb-3">
+          <p-dropdown
+            [options]="positions"
+            optionLabel="name"
+            optionValue="code"
+            [formControlName]="fieldNameKeys.position"
+          ></p-dropdown>
+        </div>
+
+        <h5>Your Phone Number</h5>
+        <div class="col-12 mb-3">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+            <input
+              type="text"
+              pInputText
+              placeholder="Phone Number"
+              [formControlName]="fieldNameKeys.phone"
+            />
+          </div>
+          <div *ngIf="isInvalidControl(fieldNameKeys.phone)">
+            <ng-container
+              *ngFor="let msg of getErrorByField(fieldNameKeys.phone)"
+            >
+              {{ msg }}
+              <br />
+            </ng-container>
+          </div>
+        </div>
+
+        <h5>Your Email Address</h5>
+        <div class="col-12 mb-3">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"
+              ><i class="pi pi-envelope"></i
+            ></span>
+            <input
+              type="text"
+              pInputText
+              placeholder="Email Address"
+              [formControlName]="fieldNameKeys.mail"
+            />
+          </div>
+          <div *ngIf="isInvalidControl(fieldNameKeys.mail)">
+            <ng-container
+              *ngFor="let msg of getErrorByField(fieldNameKeys.mail)"
+            >
+              {{ msg }}
+              <br />
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-times"
+      (click)="onClose()"
+      label="Cancel"
+      class="fa__button--primary--outlet"
+    ></p-button>
+    <p-button
+      icon="pi pi-check"
+      (click)="onSubmit()"
+      label="Add"
+      class="fa__button--primary"
+    ></p-button>
+  </ng-template>
+</p-dialog>

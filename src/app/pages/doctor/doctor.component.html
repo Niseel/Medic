@@ -1,0 +1,31 @@
+<section class="doctor">
+  <div class="doctor__header">
+    <div class="doctor__header-title">
+      <span>Doctor</span>
+    </div>
+
+    <div class="fa__feature primary">
+      <div class="fa__feature-btn" (click)="showAddDoctor()">
+        <!-- <i class="fas fa-plus"></i> -->
+        <svg-icon key="plus" size="lg"></svg-icon>
+        <span>Add Doctor</span>
+      </div>
+    </div>
+
+    <div class="fa__feature primary">
+      <div class="fa__feature-btn" (click)="showAddDoctorDialog()">
+        <!-- <i class="fas fa-plus"></i> -->
+        <svg-icon key="plus" size="lg"></svg-icon>
+        <span>Add Doctor</span>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid doctor__list">
+    <app-doctor-list [items]="items"></app-doctor-list>
+  </div>
+</section>
+
+<app-new-doctor-dialog
+  [display]="display"
+  (displayChange)="onDialogClose($event)"
+></app-new-doctor-dialog>

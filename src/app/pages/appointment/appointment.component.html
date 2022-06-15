@@ -1,0 +1,32 @@
+<section class="appointment">
+  <div class="appointment__header">
+    <div class="appointment__header-title">
+      <span>Upcoming Appointments</span>
+    </div>
+
+    <div class="appointment__feature">
+      <p-dropdown
+        [options]="statusesFilterOption"
+        optionLabel="name"
+        optionValue="code"
+        styleClass="appointment__feature--dropdown"
+      ></p-dropdown>
+      <p-dropdown
+        [options]="cabinetsFilterOption"
+        optionLabel="name"
+        optionValue="code"
+        styleClass="appointment__feature--dropdown"
+      ></p-dropdown>
+      <div class="fa__feature primary">
+        <div class="fa__feature-btn" (click)="showAddAppointmentDialog()">
+          <span>New Appointment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid appointment__list">
+    <div class="row">
+      <app-appointment-list></app-appointment-list>
+    </div>
+  </div>
+</section>

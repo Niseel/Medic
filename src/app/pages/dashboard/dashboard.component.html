@@ -1,0 +1,48 @@
+<section class="container dashboard">
+  <div class="dashboard-row">
+    <div class="dashboard__widget" *ngFor="let widget of widgets">
+      <div class="dashboard__widget-item">
+        <div class="dashboard__widget-item--icon" [ngClass]="widget.background">
+          <svg-icon
+            key="{{ widget.svg }}"
+            size="{{ widget.sizeIcon }}"
+          ></svg-icon>
+        </div>
+
+        <div class="dashboard__widget-item--infor">
+          <div class="dashboard__widget-item--infor-amount">
+            <ng-container
+              *ngIf="widget.label === 'Earning'; then curreny; else nocurreny"
+            ></ng-container>
+            <ng-template #nocurreny>
+              {{ widget.amount }}
+            </ng-template>
+            <ng-template #curreny>
+              {{ widget.amount | currencyEarning: "en-US" }}
+            </ng-template>
+          </div>
+          <div class="dashboard__widget-item--infor-label">
+            {{ widget.label }}
+          </div>
+        </div>
+        <div class="dashboard__widget-item--options">
+          <svg-icon key="dot3" size="lg"></svg-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row dashboard__chart">
+    <div class="col-8 dashboard__chart-row">
+      <div class="col-12">
+        <div class="dashboard__chart-line">
+          <app-dashboard-chart-survey></app-dashboard-chart-survey>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 dashboard__chart-row">
+      <div class="col-12">
+        <div class="dashboard__chart-bar">3</div>
+      </div>
+    </div>
+  </div>
+</section>
